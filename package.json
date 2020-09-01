@@ -1,0 +1,48 @@
+{
+  "name": "micro-front-end",
+  "version": "0.1.0",
+  "author": "Andre Luiz Rabello <andre.luiz_r@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabelloo/micro-front-end.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rabelloo/micro-front-end/issues"
+  },
+  "homepage": "https://github.com/rabelloo/micro-front-end#readme",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "preesm": "rm -rf public",
+    "esm": "tsc --outDir public && concurrently npm:esm:copy-* && concurrently npm:esm:replace-* && http-server -o",
+    "esm:copy-index": "cp src/index.* public",
+    "esm:copy-src": "rsync -R src/*.ts src/**/*.ts{,x} public",
+    "esm:replace-index": "sed -i '' 's/ts/js/g' public/index.html",
+    "esm:replace-imports": "sed -E -i ''  \"s#from '(.+)'#from 'https://cdn.skypack.dev/\\1'#g\" public/modules/*",
+    "esm:replace-dynamic-imports": "sed -E -i ''  \"s/import\\('(.+)'\\)/import('\\1.js')/g\" public/shell.js",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build src/index.html",
+    "lint": "eslint . && prettier . -c"
+  },
+  "dependencies": {
+    "lit-element": "^2.4.0",
+    "lit-html": "^1.3.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.8.0",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "http-server": "^0.12.3",
+    "parcel": "^2.0.0-beta.1",
+    "prettier": "^2.1.1",
+    "typescript": "^4.0.2"
+  }
+}

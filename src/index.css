@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 32px;
+}
+
+.mfe-module {
+  border: 1px solid grey;
+  padding: 16px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+code {
+  background-color: #eee;
+  margin-left: 8px;
+  padding: 8px;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+}
+
+input {
+  display: block;
+  margin-top: 4px;
+  padding: 8px;
+}
