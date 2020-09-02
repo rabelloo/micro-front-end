@@ -1,19 +1,16 @@
-const el = document.createElement;
-const t = document.createTextNode;
+export const root = document.createElement('div');
 
-export const root = el('div');
-
-const h1 = el('h1');
+const h1 = document.createElement('h1');
 h1.innerText = 'Vanilla';
 
-const text = t('Current state is');
+const text = document.createTextNode('Current state is');
 
-const code = el('code');
+const code = document.createElement('code');
 
-const label = el('label');
+const label = document.createElement('label');
 label.innerText = 'Type to change state';
 
-const input = el('input');
+const input = document.createElement('input');
 input.addEventListener('input', () => setState(input.value));
 label.appendChild(input);
 
