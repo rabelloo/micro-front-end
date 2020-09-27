@@ -1,0 +1,17 @@
+{
+  "name": "@mfe/vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html -p 1116 --open",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@mfe/interface": "^0.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "typescript": "^4.0.3"
+  }
+}

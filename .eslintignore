@@ -1,3 +1,5 @@
-coverage
-dist
-node_modules
+**/.cache
+**/.parcel-cache
+**/coverage
+**/dist
+**/node_modules

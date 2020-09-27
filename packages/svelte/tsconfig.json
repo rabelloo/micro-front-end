@@ -1,8 +1,11 @@
 {
-  "include": ["packages/**/*"],
-  "exclude": ["dist/**/*", "node_modules/**/*", "scripts/**/*"],
+  // extends not working properly in Parcel v1
+  "extends": "../../tsconfig.json",
+  "include": ["**/*"],
+  "exclude": ["dist/**/*", "node_modules/**/*"],
   "compilerOptions": {
     "outDir": "dist",
+    "rootDir": ".",
 
     "module": "esnext",
     "moduleResolution": "node",
@@ -10,7 +13,6 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "lib": ["esnext", "dom"],
-    "jsx": "react",
 
     "alwaysStrict": true,
     "declaration": false,
