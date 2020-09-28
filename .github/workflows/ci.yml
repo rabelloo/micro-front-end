@@ -3,7 +3,7 @@ name: ci
 on: [push, pull_request]
 
 jobs:
-  test:
+  pages:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,12 +13,13 @@ jobs:
           node-version: '12.x'
       - uses: actions/cache@v2
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
+          # yarn cache files are stored in `~/.cache/yarn` on Linux/macOS
+          path: ~/.cache/yarn
           key: ${{ runner.OS }}-node-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.OS }}-node-
             ${{ runner.OS }}-
+
       - run: yarn install --frozen-lockfile
       - run: yarn lint
       - run: yarn build
