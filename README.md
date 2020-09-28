@@ -1,8 +1,10 @@
-# Micro Front End
+# Micro Front End ~ [![pages](https://img.shields.io/github/deployments/rabelloo/micro-front-end/github-pages?color=blue&label=pages&logo=github)](https://rabelloo.github.io/micro-front-end)
 
 Example Micro Front End shell for any renderer (React, Custom Elements, etc.) with zero requirements and a simple interface (a DOM node and a render function exports).
 
 [See it in your browser!](https://rabelloo.github.io/micro-front-end)
+
+## Contents
 
 You'll need a unix shell to run most commands, if you're on Windows use your Git terminal.
 
