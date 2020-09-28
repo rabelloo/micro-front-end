@@ -9,15 +9,6 @@ body {
 body > * {
   border: 1px solid black;
   padding: 16px;
-  position: relative;
-}
-
-body > *:after {
-  display: block;
-  content: 'load: ' var(--load) '   -   render: ' var(--render);
-  position: absolute;
-  right: 16px;
-  top: 16px;
 }
 
 h1 {

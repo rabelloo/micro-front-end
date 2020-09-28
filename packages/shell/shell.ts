@@ -8,7 +8,7 @@ const modules: Record<string, Promise<Module>> = {
 };
 
 // WIP : modules.angular = import('@mfe/angular');
-// WIP : modules.svelte = import('@mfe/svelte');
+// PROD: modules.svelte = import('@mfe/svelte');
 // PROD: modules.vue = import('@mfe/vue');
 
 // the above only work after compiled, they have their own build processes.
@@ -23,7 +23,9 @@ const setState = (newState: State) => {
 const renderers: Render[] = [];
 
 Object.entries(modules).forEach(async ([name, importMFE]) => {
+  const start = performance.now();
   const { render, root } = await importMFE;
+  const endLoad = performance.now();
 
   root.id = name;
   document.body.appendChild(root);
@@ -31,4 +33,11 @@ Object.entries(modules).forEach(async ([name, importMFE]) => {
   renderers.push(render);
 
   render({ state, setState });
+  const endRender = performance.now();
+
+  setMetric(root, 'load', endLoad - start);
+  setMetric(root, 'render', endRender - endLoad);
 });
+
+const setMetric = (el: Element, name: string, ms: number) =>
+  (el as HTMLElement).style?.setProperty(`--${name}`, `'${Math.round(ms)}ms'`);

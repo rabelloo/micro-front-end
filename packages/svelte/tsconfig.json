@@ -1,27 +1,11 @@
 {
-  // extends not working properly in Parcel v1
-  "extends": "../../tsconfig.json",
-  "include": ["**/*"],
-  "exclude": ["dist/**/*", "node_modules/**/*"],
+  "extends": "@tsconfig/svelte/tsconfig.json",
+
+  "include": ["src/**/*", "../interface/**/*.ts"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": ".",
-
     "module": "esnext",
-    "moduleResolution": "node",
-    "target": "es2019",
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "lib": ["esnext", "dom"],
-
-    "alwaysStrict": true,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "skipLibCheck": false,
-    "strict": true
+    "target": "esnext",
+    "sourceMap": true
   }
 }

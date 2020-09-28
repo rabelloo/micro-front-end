@@ -21,6 +21,7 @@
     "prebuild": "rm -rf public/dist",
     "build": "concurrently yarn:build:*",
     "build:esm": "tsc -p tsconfig.build.json",
+    "build:svelte": "cd packages/svelte && yarn build && mkdir -p ../../public/dist/svelte && cp public/dist/* \"$_\"",
     "build:vue": "cd packages/vue && yarn build && mkdir -p ../../public/dist/vue && cp dist/* \"$_\"",
     "postbuild": "deno run --unstable --allow-read --allow-write scripts/build.ts || node scripts/build.js",
     "lint": "eslint . && prettier . -c"
