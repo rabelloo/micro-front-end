@@ -2,6 +2,8 @@
 
 Example Micro Front End shell for any renderer (React, Custom Elements, etc.) with zero requirements and a simple interface (a DOM node and a render function exports).
 
+[See it in your browser!](https://rabelloo.github.io/micro-front-end)
+
 You'll need a unix shell to run most commands, if you're on Windows use your Git terminal.
 
 Some scripts will use Deno if you have it installed, they all fallback to Node.
