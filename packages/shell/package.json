@@ -12,7 +12,8 @@
     "@mfe/lit-element": "^0.1.0",
     "@mfe/lit-html": "^0.1.0",
     "@mfe/react": "^0.1.0",
-    "@mfe/vanilla": "^0.1.0"
+    "@mfe/vanilla": "^0.1.0",
+    "@mfe/vue": "^0.1.0"
   },
   "devDependencies": {
     "parcel": "^1.12.4",

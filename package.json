@@ -19,12 +19,16 @@
     "start": "cd packages/shell && yarn start",
     "inspect": "http-server public -o",
     "prebuild": "rm -rf public/dist",
-    "build": "tsc --outDir public/dist && deno run --unstable --allow-read --allow-write scripts/build.ts || node scripts/build.js",
+    "build": "concurrently yarn:build:*",
+    "build:esm": "tsc -p tsconfig.build.json",
+    "build:vue": "cd packages/vue && yarn build && mkdir -p ../../public/dist/vue && cp dist/* \"$_\"",
+    "postbuild": "deno run --unstable --allow-read --allow-write scripts/build.ts || node scripts/build.js",
     "lint": "eslint . && prettier . -c"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
+    "concurrently": "^5.3.0",
     "eslint": "^7.10.0",
     "eslint-plugin-react": "^7.21.2",
     "eslint-plugin-react-hooks": "^4.1.2",

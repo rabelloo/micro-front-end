@@ -1,14 +1,18 @@
 import type { Module, Render, State } from '@mfe/interface';
 
 const modules: Record<string, Promise<Module>> = {
-  // angular: import('@mfe/angular'),
   litElement: import('@mfe/lit-element'),
   litHtml: import('@mfe/lit-html'),
   react: import('@mfe/react'),
-  // svelte: import('@mfe/svelte'),
   vanilla: import('@mfe/vanilla'),
-  // vue: import('@mfe/vue'),
 };
+
+// WIP : modules.angular = import('@mfe/angular');
+// WIP : modules.svelte = import('@mfe/svelte');
+// PROD: modules.vue = import('@mfe/vue');
+
+// the above only work after compiled, they have their own build processes.
+// comment is removed by scripts/replace-imports.
 
 // shared state example (a store is better of course)
 let state: State = { name: 'foo' };

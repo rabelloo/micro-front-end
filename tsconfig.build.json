@@ -1,8 +1,17 @@
 {
+  // extends not working properly in Parcel v1
+  "extends": "./tsconfig.json",
   "include": ["packages/**/*"],
-  "exclude": ["dist/**/*", "node_modules/**/*", "scripts/**/*"],
+  "exclude": [
+    "**/dist/**/*",
+    "**/node_modules/**/*",
+    "packages/svelte/**/*", // Svelte needs a custom build
+    "packages/svelteee/**/*", // Svelte needs a custom build
+    "packages/vue/**/*", // Vue needs a custom Rollup build
+    "scripts/**/*"
+  ],
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "public/dist",
 
     "module": "esnext",
     "moduleResolution": "node",
@@ -14,6 +23,7 @@
 
     "alwaysStrict": true,
     "declaration": false,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
