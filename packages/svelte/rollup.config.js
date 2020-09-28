@@ -5,6 +5,7 @@ import svelte from 'rollup-plugin-svelte';
 import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 
+/* global process */
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -17,6 +18,7 @@ function serve() {
   return {
     writeBundle() {
       if (server) return;
+      // eslint-disable-next-line no-undef
       server = require('child_process').spawn(
         'npm',
         ['run', 'serve', '--', '--dev'],
