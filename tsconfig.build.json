@@ -5,9 +5,9 @@
   "exclude": [
     "**/dist/**/*",
     "**/node_modules/**/*",
+    "packages/angular/**/*", // Angular needs a custom build
     "packages/svelte/**/*", // Svelte needs a custom build
-    "packages/svelteee/**/*", // Svelte needs a custom build
-    "packages/vue/**/*", // Vue needs a custom Rollup build
+    "packages/vue/**/*", // Vue needs a custom build
     "scripts/**/*"
   ],
   "compilerOptions": {

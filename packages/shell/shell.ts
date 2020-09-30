@@ -7,7 +7,7 @@ const modules: Record<string, Promise<Module>> = {
   vanilla: import('@mfe/vanilla'),
 };
 
-// WIP : modules.angular = import('@mfe/angular');
+// PROD: modules.angular = import('@mfe/angular');
 // PROD: modules.svelte = import('@mfe/svelte');
 // PROD: modules.vue = import('@mfe/vue');
 

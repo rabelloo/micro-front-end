@@ -3,15 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "parcel index.html -p 1119 --open",
-    "prebuild": "rm -rf dist",
-    "build": "parcel build index.html"
+    "start": "ng serve -o",
+    "build": "ng build --main src/index.ts --prod --output-hashing none --extra-webpack-config webpack.partial.js",
+    "postbuild": "cat dist/{main,polyfills,runtime}.js > dist/index.js",
+    "lint": "ng lint"
   },
   "dependencies": {
-    "@mfe/interface": "^0.1.0"
+    "@angular/animations": "~10.1.3",
+    "@angular/common": "~10.1.3",
+    "@angular/compiler": "~10.1.3",
+    "@angular/core": "~10.1.3",
+    "@angular/elements": "^10.1.3",
+    "@angular/forms": "~10.1.3",
+    "@angular/platform-browser": "~10.1.3",
+    "@angular/platform-browser-dynamic": "~10.1.3",
+    "@angular/router": "~10.1.3",
+    "@mfe/interface": "^0.1.0",
+    "document-register-element": "^1.7.2",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "parcel": "^1.12.4",
+    "@angular-builders/custom-webpack": "^10.0.1",
+    "@angular-devkit/build-angular": "~0.1001.3",
+    "@angular/cli": "~10.1.3",
+    "@angular/compiler-cli": "~10.1.3",
+    "@purtuga/esm-webpack-plugin": "^1.4.0",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
+    "ngx-build-plus": "^10.1.1",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
     "typescript": "^4.0.3"
   }
 }

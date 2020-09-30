@@ -1,0 +1,8 @@
+<h1>Angular {{ version }}</h1>
+Current name is <code>{{ name }}</code>
+<label>
+  Type to change name <input [value]="name" (input)="onInput($event)" />
+</label>
+<p>
+  Changed internally <code>{{ count }}</code> times
+</p>
