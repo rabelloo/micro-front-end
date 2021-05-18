@@ -8,20 +8,20 @@
   },
   "dependencies": {
     "@mfe/interface": "^0.1.0",
-    "core-js": "^3.6.5",
+    "core-js": "^3.12.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vue-monorepo-boilerplate/common": "^0.1.9",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/cli-plugin-babel": "~4.5.13",
+    "@vue/cli-plugin-typescript": "~4.5.13",
+    "@vue/cli-service": "~4.5.13",
+    "@vue/compiler-sfc": "^3.0.11",
     "babel-preset-env": "^1.7.0",
-    "rollup": "^2.28.2",
+    "rollup": "^2.48.0",
     "rollup-plugin-typescript": "^1.0.1",
-    "rollup-plugin-vue": "^6.0.0-beta.10",
-    "typescript": "^4.0.3",
+    "rollup-plugin-vue": "^6.0.0",
+    "typescript": "^4.2.4",
     "vue-template-compiler": "^2.6.12"
   }
 }
