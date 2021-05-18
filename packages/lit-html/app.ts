@@ -7,7 +7,7 @@ interface Props {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const App = (virtual(_App as any) as any) as typeof _App;
+export const App = virtual(_App as any) as any as typeof _App;
 
 function _App({ name, onNameChange }: Props) {
   const [count, setCount] = useState(0);
