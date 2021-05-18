@@ -29,4 +29,5 @@ Object.entries(modules).forEach(async ([name, importMFE]) => {
     setMetric(root, 'render', endRender - endLoad);
 });
 const setMetric = (el, name, ms) => { var _a; return (_a = el.style) === null || _a === void 0 ? void 0 : _a.setProperty(`--${name}`, `'${Math.round(ms)}ms'`); };
+export {};
 //# sourceMappingURL=shell.js.map

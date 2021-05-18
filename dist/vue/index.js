@@ -23,7 +23,7 @@ const _hoisted_2 = /*#__PURE__*/createTextVNode(" Type to change name ");
 const _hoisted_3 = /*#__PURE__*/createTextVNode(" Changed internally ");
 const _hoisted_4 = /*#__PURE__*/createTextVNode(" times ");
 
-function render(_ctx, _cache, $props, $setup, $data, $options) {
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return (openBlock(), createBlock(Fragment, null, [
     createVNode("h1", null, "Vue " + toDisplayString(_ctx.version), 1 /* TEXT */),
     _hoisted_1,
@@ -32,7 +32,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       _hoisted_2,
       createVNode("input", {
         value: _ctx.name,
-        onInput: _cache[1] || (_cache[1] = (...args) => (_ctx.onInput(...args)))
+        onInput: _cache[1] || (_cache[1] = (...args) => (_ctx.onInput && _ctx.onInput(...args)))
       }, null, 40 /* PROPS, HYDRATE_EVENTS */, ["value"])
     ]),
     createVNode("p", null, [
@@ -43,11 +43,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64 /* STABLE_FRAGMENT */))
 }
 
-script.render = render;
+script.render = render$1;
 
 var root = document.createElement('div');
 var props;
-var render$1 = function (_a) {
+var render = function (_a) {
     var state = _a.state, setState = _a.setState;
     if (!props) {
         props = reactive({
@@ -64,5 +64,5 @@ var render$1 = function (_a) {
     props.onNameChange = function (name) { return setState({ name: name }); };
 };
 
-export { render$1 as render, root };
+export { render, root };
 //# sourceMappingURL=index.js.map
